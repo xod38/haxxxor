@@ -25,6 +25,11 @@ signed main(){
             min2 = min1;
             min1 = mas[i];
         }
+        else {
+            if (mas[i] < min2) {
+                min2 = mas[i];
+            }
+        }
     }
     
     std::cout << min1 << " " << min2;
