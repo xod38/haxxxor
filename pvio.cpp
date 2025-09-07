@@ -9,30 +9,51 @@ const int mod = 2e9+7;
 signed main(){
     std::ios_base::sync_with_stdio(0); std::cin.tie(0);
     std::cout.setf(std::ios::fixed); std::cout.precision(8);
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    int a;
-    int min1 = mod;
-    int min2 = mod;
-    std::cin >> a;
-    int mas[a+10];
-    for (int i = 0; i < a; i++){
-        std::cin >> mas[i];
+    int n, m, k;
+    std::cin >> n >> m >> k;
+    int mat1[110][110];
+    int mat2[110][110];
+    long long ans[110][110];
+
+    for (int i = 0; i < 110; i++) {
+        for (int j = 0; j < 110; j++) {
+            ans[i][j] = 0;
+        }
+    }
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            std::cin >> mat1[i][j];
+        }
     }
 
-    for (int i = 0; i < a; i++){
-        if (mas[i] < min1) {
-            min2 = min1;
-            min1 = mas[i];
-        }
-        else {
-            if (mas[i] < min2) {
-                min2 = mas[i];
-            }
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < k; j++) {
+            std::cin >> mat2[i][j];
         }
     }
-    
-    std::cout << min1 << " " << min2;
-    
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < k; j++) {
+            for (int p = 0; p < m; p++) {
+                ans[i][j] = ans[i][j] + mat1[i][p] * mat2[p][j];
+            }
+
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < k; j++) {
+            if (j == k - 1) {
+                std::cout << ans[i][j];
+            }
+            else { 
+                std::cout << ans[i][j] << " ";
+            }
+        }
+        if (i != n - 1) {
+            std::cout << "\n";
+        }
+    }
     return 0;
 }
