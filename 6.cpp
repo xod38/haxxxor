@@ -9,11 +9,12 @@ const int mod = 2e9+7;
 signed main(){
     std::ios_base::sync_with_stdio(0); std::cin.tie(0);
     std::cout.setf(std::ios::fixed); std::cout.precision(8);
+
     int n, m, k;
     std::cin >> n >> m >> k;
     int mat1[110][110];
     int mat2[110][110];
-    long long ans[110][110];
+    int ans[110][110];
 
     for (int i = 0; i < 110; i++) {
         for (int j = 0; j < 110; j++) {
