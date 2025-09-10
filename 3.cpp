@@ -1,17 +1,16 @@
 #include <iostream>
-#include <cstring>
 
-const int mod = 1e9+7;
-
-signed main(){
+signed main() {
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
     std::ios_base::sync_with_stdio(0); std::cin.tie(0);
     std::cout.setf(std::ios::fixed); std::cout.precision(8);
-    std::string s;
-    char ans = 'a';
-    std::cin >> s;
-    for (int i = 0; i < s.size(); i++) {
-        if (s[i] > ans) {
-            ans = s[i];
+    char a;
+    char ans;
+    ans = 'a';
+    while (std::cin >> a) {
+        if (a > ans) {
+            ans = a;
         }
     }
     std::cout << ans;
