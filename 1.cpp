@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cstdlib>
-#include <cstdio>
 #include <vector>
 
 signed main(){

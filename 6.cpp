@@ -1,8 +1,4 @@
 #include <iostream>
-#include <cstdlib>
-#include <cstdio>
-#include <vector>
-#include <cstring>
 
 const int mod = 2e9+7;
 

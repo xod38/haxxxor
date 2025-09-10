@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cstdlib>
-#include <cstdio>
 #include <vector>
 
 const int mod = 1e9+7;
